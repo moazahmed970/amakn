@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amaken — Dubai Property Search</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <div class="brand display">am<em>a</em>ken</div>
+    <div class="tabs" id="listingTabs">
+      <button data-mode="sale" class="active">For Sale</button>
+      <button data-mode="rent">For Rent</button>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Dubai · Abu Dhabi · Sharjah</div>
+    <h1>Property search, without<br>the noise.</h1>
+    <p>Verified listings across the UAE — filtered by what actually matters to you, updated daily.</p>
+    <div class="search-bar">
+      <input type="text" id="searchLocation" placeholder="Area, building, or community…">
+      <select id="typeSelect">
+        <option value="">Any type</option>
+        <option value="apartment">Apartment</option>
+        <option value="villa">Villa</option>
+        <option value="townhouse">Townhouse</option>
+        <option value="office">Office</option>
+      </select>
+      <select id="bedSelect">
+        <option value="">Any beds</option>
+        <option value="0">Studio</option>
+        <option value="1">1 Bed</option>
+        <option value="2">2 Beds</option>
+        <option value="3">3 Beds</option>
+        <option value="4">4+ Beds</option>
+      </select>
+      <button id="searchBtn">Search</button>
+    </div>
+  </div>
+</section>
+
+<div class="stats-strip wrap">
+  <div class="stat"><div class="num display">2,400+</div><div class="lbl">Active listings</div></div>
+  <div class="stat"><div class="num display">18</div><div class="lbl">Communities covered</div></div>
+  <div class="stat"><div class="num display">96%</div><div class="lbl">Verified ownership</div></div>
+</div>
+
+<div class="wrap listings-shell">
+  <aside class="filters">
+    <div class="filter-group">
+      <h4>Price Range (AED)</h4>
+      <div class="range-row">
+        <input type="range" id="priceRange" min="300000" max="8000000" step="50000" value="8000000">
+      </div>
+      <div class="loc mono" id="priceLabel" style="margin-top:8px;">Up to AED 8,000,000</div>
+    </div>
+    <div class="filter-group">
+      <h4>Community</h4>
+      <div class="chip-group" id="communityChips"></div>
+    </div>
+    <div class="filter-group">
+      <h4>Furnishing</h4>
+      <div class="chip-group" id="furnishChips">
+        <button class="chip active" data-furnish="">Any</button>
+        <button class="chip" data-furnish="furnished">Furnished</button>
+        <button class="chip" data-furnish="unfurnished">Unfurnished</button>
+      </div>
+    </div>
+  </aside>
+
+  <div>
+    <div class="results-head">
+      <h3 class="display" id="resultsTitle">All Listings</h3>
+      <span class="count" id="resultsCount"></span>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</div>
+<script src="main.js"></script>
+
+</body>
+</html>
